@@ -1,69 +1,35 @@
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
-  <title>Juego Cazando</title>
-
-  <link href="cazando.css" rel="stylesheet"/>
-
+  <title>Juego Cazando</title>
+  <link href="cazando.css" rel="stylesheet"/>
 </head>
 
 <body onload="iniciarJuego()">
 
- 
+  <h1>Juego Cazando</h1>
+  <p>Autor: Spixt583</p>
 
-  <h1>Juego Cazando</h1>
+  <div class="contenedor">
+    <canvas id="areaJuego" width="500" height="500"></canvas>
+  </div>
 
-  <p>Autor: Victor Pilachanga</p>
+  <div class="controles">
+    <button>⬆</button><br>
+    <button onclick="moverIzquierda();">⬅</button>
+    <button>⬇</button>
+    <button>➡</button>
+  </div>
 
-  <div class="contenedor">
+  <div class="panel">
+    <span>Puntos: <span id="puntos">0</span></span>
+    <span>Tiempo: <span id="tiempo">10</span></span>
+  </div>
 
-    <canvas id="areaDeJuego" width="500" height="500"></canvas>
+  <p id="mensaje"></p>
 
-  </div>
-
- 
-
-  <div class="controles">
-
-    <button>⬆</button>
-
-    <br>
-
-    <button>⬅</button>
-
-    <button>⬇</button>
-
-    <button>➡</button>
-
-  </div>
-
- 
-
- 
-
-  <div class="panel">
-
-    <span>Puntos: <span id="puntos">0</span></span>
-
-    <span>Tiempo: <span id="tiempo">10</span></span>
-
-  </div>
-
- 
-
-  <p id="mensaje"></p>
-
- 
-
- 
-
-  <script src="cazando.js"></script>
-
- 
+  <script src="cazando.js"></script>
+  <script src="utils.js"></script>
 
 </body>
-
 </html>
