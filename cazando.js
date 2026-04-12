@@ -17,6 +17,19 @@ let puntos = 0;
 let tiempo = 40;
 let velocidadTiempo = 1000;  
 let intervalo;
+
+function reiniciarJuego(){
+    clearInterval(intervalo);
+    tiempo = 40;
+    puntos = 0;
+    mostrarEnSpan("tiempo", tiempo);
+    mostrarEnSpan("puntos", puntos);
+    limpiarCanva();
+    aparecerComida();
+    graficarGato();
+    intervalo = setInterval(restarTiempo, velocidadTiempo);
+}
+
 function iniciarJuego(){
     intervalo = setInterval(restarTiempo, velocidadTiempo)
     graficarGato();
