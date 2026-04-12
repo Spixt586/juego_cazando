@@ -11,7 +11,9 @@ const ANCHO_GATO = 80;
 const ALTO_GATO = 50;
 //comida tamaño
 const ALTO_COMIDA = 20;
-const ANCHO_COMIDA = 20;  
+const ANCHO_COMIDA = 20;
+//valores del juego
+let puntos = 0;  
 
 function iniciarJuego(){
     graficarGato();
@@ -73,6 +75,9 @@ function detectarColision(){
         comidaX < gatoX + ANCHO_GATO &&
         comidaY + ALTO_COMIDA > gatoY &&
         comidaY < gatoY + ALTO_GATO){
-        alert("colision")
+        
+        puntos = puntos + 1;
+        let componente = document.getElementById("puntos");
+        componente.textContent = puntos;
     }
 }
