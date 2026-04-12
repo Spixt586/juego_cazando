@@ -1,4 +1,13 @@
-function graficarRectangulo(x,y,ancho,alto,color){
-    ctx.fillStyle = color;
-    ctx.fillRect(x,y,ancho,alto)
+function generarAleatorio(min,max){
+    let random=Math.random();
+    let numero=random*(max-min+1);
+    let numeroEntero = Math.ceil(numero);
+    numeroEntero = numeroEntero+min-1;
+    return numeroEntero
+}
+
+
+function mostrarEnSpan(idSpan,valor){
+    let componente=document.getElementById(idSpan);
+    componente.textContent=valor;
 }

@@ -7,11 +7,11 @@ let gatoY=canvas.height/2;
 let comidaX =canvas.width-20
 let comidaY=canvas.height-20
 //gato tamaño
-const anchoGato = 80;
-const altoGato = 50;
+const ANCHO_GATO = 80;
+const ALTO_GATO = 50;
 //comida tamaño
-const altoComida = 20;
-const anchoComida = 20;  
+const ALTO_COMIDA = 20;
+const ANCHO_COMIDA = 20;  
 
 function iniciarJuego(){
     graficarGato();
@@ -19,11 +19,11 @@ function iniciarJuego(){
 }
  
 function graficarGato(){
-    graficarRectangulo(gatoX, gatoY, anchoGato,altoGato, "#1900ff");
+    graficarRectangulo(gatoX, gatoY, ANCHO_GATO,ALTO_GATO, "#1900ff");
 }
  
 function graficarComida(){
-    graficarRectangulo(comidaX,comidaY,anchoComida, altoComida, "#FF0808");
+    graficarRectangulo(comidaX,comidaY,ANCHO_COMIDA, ALTO_COMIDA, "#FF0808");
 }
 
 function moverIzquierda(){
@@ -40,6 +40,32 @@ function moverDerecha(){
     graficarComida();
 }
 
+function moverArriba(){
+    gatoY = gatoY - 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+}
+
+function moverAbajo(){
+    gatoY = gatoY + 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+}
+
+
 function limpiarCanva(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
+}
+
+function graficarRectangulo(x,y,ancho,alto,color){
+    ctx.fillStyle = color;
+    ctx.fillRect(x,y,ancho,alto)
+}
+
+function detectarColision(){
+    if(ANCHO_GATO == comidaX && ANCHO_GATO == comidaY){
+        alert("colision")
+    }
 }
