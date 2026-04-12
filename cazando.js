@@ -33,6 +33,13 @@ function moverIzquierda(){
     graficarComida();
 }
 
+function moverDerecha(){
+    gatoX = gatoX + 10;
+    limpiarCanva();
+    graficarGato();
+    graficarComida();
+}
+
 function limpiarCanva(){
     ctx.clearRect(0,0,canvas.width,canvas.height);
 }
