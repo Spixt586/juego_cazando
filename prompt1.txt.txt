@@ -1,0 +1,15 @@
+El jugador controla un rectángulo simple que representa al gato: un rectángulo azul. Este rectángulo se mueve por la parte inferior del canvas atrapando comida representado por un cuadrado.
+
+Interfaz del juego:
+
+- Título grande arriba: "🐱 CAZANDO 🐱" con letras bold en gradiente neón (magenta, cyan y amarillo)
+
+- Canvas central grande con borde glow neón magenta y fondo degradado oscuro
+
+- Paneles glassmorphism translúcidos mostrando "Puntos" y "Tiempo" en números grandes y brillantes
+
+- Controles debajo con botones grandes redondeados en estilo neón (magenta y cyan) con flechas ⬆ ⬅ ⬇ ➡ y botón "🔄 Reiniciar Juego"
+
+- Mensaje de feedback abajo
+
+Estilo visual hiper vibrante y actual 2026: colores extremadamente saturados y vivos (magenta neón, cyan eléctrico, amarillo limón, verde lima, naranja flameante, púrpura brillante). Efectos glow intensos, partículas brillantes, alto contraste y energía.
