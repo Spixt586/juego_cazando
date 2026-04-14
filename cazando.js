@@ -119,3 +119,5 @@ function restarTiempo(){
         alert("PERDISTE");
     }
 }
+
+//hola
