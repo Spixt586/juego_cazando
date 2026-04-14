@@ -1,30 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-  <title>Juego Cazando</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cazando 🐱</title>
+  
+  <!-- Fuente moderna recomendada -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  
   <link href="cazando.css" rel="stylesheet"/>
 </head>
 
 <body onload="iniciarJuego()">
 
-  <h1>Juego Cazando</h1>
-  <p>Autor: Spixt583</p>
+  <h1>🐱 CAZANDO 🐱</h1>
+  <p>¡Ayuda al gato a atrapar la comida!</p>
 
   <div class="contenedor">
     <canvas id="areaJuego" width="500" height="500"></canvas>
   </div>
 
   <div class="controles">
-    <button onclick="moverArriba();">⬆</button><br>
-    <button onclick="moverIzquierda();">⬅</button>
-    <button onclick="moverAbajo();">⬇</button>
-    <button onclick="moverDerecha();">➡</button>
-    <button onclick="reiniciarJuego();">Reiniciar</button>
+    <div class="controles-row">
+      <button onclick="moverArriba();">⬆</button>
+    </div>
+    <div class="controles-row">
+      <button onclick="moverIzquierda();">⬅</button>
+      <button onclick="moverAbajo();">⬇</button>
+      <button onclick="moverDerecha();">➡</button>
+    </div>
+    <button id="reiniciar" onclick="reiniciarJuego();">🔄 Reiniciar Juego</button>
   </div>
 
   <div class="panel">
-    <span>Puntos: <span id="puntos">0</span></span>
-    <span">Tiempo: <span id="tiempo">40</span></span>
+    <span>
+      <span class="stat-label">Puntos</span>
+      <span class="stat-value" id="puntos">0</span>
+    </span>
+    <span>
+      <span class="stat-label">Tiempo</span>
+      <span class="stat-value" id="tiempo">40</span>
+    </span>
   </div>
 
   <p id="mensaje"></p>
