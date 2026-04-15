@@ -107,8 +107,7 @@ function detectarColision(){
 function aparecerComida(){
     comidaX =generarAleatorio(0, canvas.width - ANCHO_COMIDA);
     comidaY = generarAleatorio(0, canvas.height - ALTO_COMIDA);
-    graficarComida();
-    
+    graficarComida();   
 }
 
 function restarTiempo(){

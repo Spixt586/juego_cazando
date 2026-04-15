@@ -4,10 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cazando 🐱</title>
-  
-  <!-- Fuente moderna recomendada -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
-  
   <link href="cazando.css" rel="stylesheet"/>
 </head>
 
@@ -16,6 +12,7 @@
   <h1>🐱 CAZANDO 🐱</h1>
   <p>¡Ayuda al gato a atrapar la comida!</p>
 
+  <div class="juego-wrapper">
   <div class="contenedor">
     <canvas id="areaJuego" width="500" height="500"></canvas>
   </div>
@@ -29,10 +26,8 @@
       <button onclick="moverAbajo();">⬇</button>
       <button onclick="moverDerecha();">➡</button>
     </div>
-    <button id="reiniciar" onclick="reiniciarJuego();">🔄 Reiniciar Juego</button>
-  </div>
-
-  <div class="panel">
+    <button id="reiniciar" onclick="reiniciarJuego();">🔄 Reiniciar</button>
+    <div class="panel">
     <span>
       <span class="stat-label">Puntos</span>
       <span class="stat-value" id="puntos">0</span>
@@ -42,7 +37,8 @@
       <span class="stat-value" id="tiempo">40</span>
     </span>
   </div>
-
+  </div>
+</div>
   <p id="mensaje"></p>
 
   <script src="cazando.js"></script>
