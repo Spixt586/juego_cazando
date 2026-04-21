@@ -14,6 +14,8 @@ IMAGEN_GATO.src = "Gato-pensando-Photoroom.png";
 //comida tamaño
 const ALTO_COMIDA = 20;
 const ANCHO_COMIDA = 20;
+const IMAGEN_COMIDA = new Image();
+IMAGEN_COMIDA.src = "imagen.jpg";
 //valores del juego
 let puntos = 0;
 let tiempo = 15;
@@ -59,7 +61,7 @@ function graficarGato(){
 }
  
 function graficarComida(){
-    graficarRectangulo(comidaX,comidaY,ANCHO_COMIDA, ALTO_COMIDA, "#FF0808");
+    ctx.drawImage(IMAGEN_COMIDA ,comidaX,comidaY,ANCHO_COMIDA, ALTO_COMIDA,);
 }
 
 function moverIzquierda(){
