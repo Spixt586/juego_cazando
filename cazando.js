@@ -14,7 +14,7 @@ const ALTO_COMIDA = 20;
 const ANCHO_COMIDA = 20;
 //valores del juego
 let puntos = 0;
-let tiempo = 40;
+let tiempo = 15; //voy a poner el tiempo que dice. También tocaría cambiar en el html para que se refleje bién
 let velocidadTiempo = 1000;  
 let intervalo;
 
