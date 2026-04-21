@@ -100,7 +100,9 @@ function detectarColision(){
         comidaX < gatoX + ANCHO_GATO &&
         comidaY + ALTO_COMIDA > gatoY &&
         comidaY < gatoY + ALTO_GATO){
-        reiniciarTiempo(); //funciona
+        reiniciarTiempo()
+        restarTiempo()
+        restar1Seg()
         puntos = puntos + 1;
         let componente = document.getElementById("puntos");
         componente.textContent = puntos;
@@ -127,5 +129,10 @@ function restarTiempo(){
         alert("PERDISTE");
     }
 }
+
+function restar1Seg(){
+        tiempo = tiempo -1;
+        mostrarEnSpan("tiempo", tiempo);
+}//soy medio despistado 
 
 //hola
