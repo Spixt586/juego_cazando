@@ -9,6 +9,8 @@ let comidaY=canvas.height-20
 //gato tamaño
 const ANCHO_GATO = 80;
 const ALTO_GATO = 50;
+const IMAGEN_GATO = new Image();
+IMAGEN_GATO.src = "Gato-pensando-Photoroom.png";
 //comida tamaño
 const ALTO_COMIDA = 20;
 const ANCHO_COMIDA = 20;
@@ -32,6 +34,7 @@ function reiniciarJuego(){
 
 function reiniciarTiempo(){
     clearInterval(intervalo);
+    restar1Seg(tiempo)
     tiempo = 15;
     mostrarEnSpan("tiempo", tiempo);
     limpiarCanva();
@@ -44,9 +47,15 @@ function iniciarJuego(){
     graficarGato();
     aparecerComida();
 }
+
+// ❌ ANTES
+//function graficarGato(){
+//    graficarRectangulo(gatoX, gatoY, ANCHO_GATO, ALTO_GATO, "#1900ff");
+//}
  
+// ✅ DESPUÉS
 function graficarGato(){
-    graficarRectangulo(gatoX, gatoY, ANCHO_GATO,ALTO_GATO, "#1900ff");
+    ctx.drawImage(IMAGEN_GATO, gatoX, gatoY, ANCHO_GATO, ALTO_GATO);
 }
  
 function graficarComida(){
@@ -102,7 +111,7 @@ function detectarColision(){
         comidaY < gatoY + ALTO_GATO){
         reiniciarTiempo()
         restarTiempo()
-        restar1Seg()
+        restar1Seg(tiempo)// Esto del tiempo ya voy a ver como le hago. pero ya cumplí todo lo demas con respecto al examen
         puntos = puntos + 1;
         let componente = document.getElementById("puntos");
         componente.textContent = puntos;
@@ -130,9 +139,7 @@ function restarTiempo(){
     }
 }
 
-function restar1Seg(){
-        tiempo = tiempo -1;
-        mostrarEnSpan("tiempo", tiempo);
-}//soy medio despistado 
-
+function restar1Seg(tiempo){
+    let restar = tiempo - 1
+}
 //hola
