@@ -14,13 +14,13 @@ const ALTO_COMIDA = 20;
 const ANCHO_COMIDA = 20;
 //valores del juego
 let puntos = 0;
-let tiempo = 15; //voy a poner el tiempo que dice. También tocaría cambiar en el html para que se refleje bién
+let tiempo = 15;
 let velocidadTiempo = 1000;  
 let intervalo;
 
 function reiniciarJuego(){
     clearInterval(intervalo);
-    tiempo = 40;
+    tiempo = 15;
     puntos = 0;
     mostrarEnSpan("tiempo", tiempo);
     mostrarEnSpan("puntos", puntos);
@@ -28,6 +28,15 @@ function reiniciarJuego(){
     aparecerComida();
     graficarGato();
     intervalo = setInterval(restarTiempo, velocidadTiempo);
+}
+
+function reiniciarTiempo(){
+    clearInterval(intervalo);
+    tiempo = 15;
+    mostrarEnSpan("tiempo", tiempo);
+    limpiarCanva();
+    graficarGato();
+    intervalo = setInterval(restarTiempo, velocidadTiempo)
 }
 
 function iniciarJuego(){
@@ -91,7 +100,7 @@ function detectarColision(){
         comidaX < gatoX + ANCHO_GATO &&
         comidaY + ALTO_COMIDA > gatoY &&
         comidaY < gatoY + ALTO_GATO){
-        
+        reiniciarTiempo(); //funciona
         puntos = puntos + 1;
         let componente = document.getElementById("puntos");
         componente.textContent = puntos;
