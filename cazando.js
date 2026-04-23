@@ -18,13 +18,15 @@ const IMAGEN_COMIDA = new Image();
 IMAGEN_COMIDA.src = "imagen.jpg";
 //valores del juego
 let puntos = 0;
-let tiempo = 15;
+let tiempoMax = 40;
+let tiempo = tiempoMax;
 let velocidadTiempo = 1000;  
 let intervalo;
 
 function reiniciarJuego(){
     clearInterval(intervalo);
-    tiempo = 15;
+    tiempoMax = 40;
+    tiempo = tiempoMax;
     puntos = 0;
     mostrarEnSpan("tiempo", tiempo);
     mostrarEnSpan("puntos", puntos);
@@ -36,8 +38,8 @@ function reiniciarJuego(){
 
 function reiniciarTiempo(){
     clearInterval(intervalo);
-    restar1Seg(tiempo)
-    tiempo = 15;
+    tiempoMax = tiempoMax - 1;
+    tiempo = tiempoMax;
     mostrarEnSpan("tiempo", tiempo);
     limpiarCanva();
     graficarGato();
@@ -111,9 +113,9 @@ function detectarColision(){
         comidaX < gatoX + ANCHO_GATO &&
         comidaY + ALTO_COMIDA > gatoY &&
         comidaY < gatoY + ALTO_GATO){
-        reiniciarTiempo()
-        restarTiempo()
-        restar1Seg(tiempo)// Esto del tiempo ya voy a ver como le hago. pero ya cumplí todo lo demas con respecto al examen
+        
+        reiniciarTiempo();
+        mostrarEnSpan("tiempo",tiempo);
         puntos = puntos + 1;
         let componente = document.getElementById("puntos");
         componente.textContent = puntos;
@@ -141,7 +143,4 @@ function restarTiempo(){
     }
 }
 
-function restar1Seg(tiempo){
-    let restar = tiempo - 1
-}
 //hola
